@@ -10,7 +10,12 @@ var app;
             this.$sce = $sce;
             this.input = "";
             this.str = [];
+            this.words = [];
             this.game = new Phaser.Game(0, 0, Phaser.AUTO, "phaser-example", { preload: this.preload.bind(this), create: this.create.bind(this) });
+            this.words = [
+                { str: "メイのバカ！", alphabets: ["め", "い", "の", "ば", "か", "！"] },
+                { str: "黙れ小僧！", alphabets: ["だ", "ま", "れ", "こ", "ぞ", "う", "！"] }
+            ];
         }
         AppController.prototype.preload = function () {
             this.game.load.audio("type", "../sound/meka_ka_type02.mp3");
